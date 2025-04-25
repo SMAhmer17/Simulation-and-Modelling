@@ -1,0 +1,45 @@
+
+<body>
+    
+  <h1>RESULT:</h1>
+  {% block content %} <p>Arrival Mean :{{arrival_mean}}</p>
+  <p>ServiceMean :{{service_mean}}</p>
+
+  <p>Average Turnaround Time :{{avg_turnaround_time}}</p>
+
+  <p>Average Waiting Time :{{avg_waiting_time}}</p>
+
+  <p>Average Response Time:{{avg_response_time}}</p>
+
+  Inter Arrival Mean:{{inter_arrival_mean}}
+
+  Arrival:{{arrival}}
+  <br />
+  <br />
+  Service:{{service}}
+  <br />
+  <br />
+  start:{{start}}
+  <br />
+  <br />
+  completion:{{completion}}
+  <br />
+  <br />
+  turnaround_time:{{turnaround_time}}
+  <br />
+  <br />
+  waiting_time:{{waiting_time}}
+  <br />
+  <br />
+  response_time:{{response_time}}
+  <br />
+  <br />
+  <p>
+  <img src="data:image/png;base64,{{ plot_data1 }}" alt="Matplotlib Plot" />
+  <br />
+  <img src="data:image/png;base64,{{ plot_data2 }}" alt="Matplotlib Plot" />
+  <br />
+</p>
+  {% endblock %}
+</div>
+</body>

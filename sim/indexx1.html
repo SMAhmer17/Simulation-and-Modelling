@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homepage</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .navbar {
+        overflow: hidden;
+        /* background-color: #7d0909; */
+        margin: 0px 10%;
+        width: 20%;
+      }
+
+      .navbar a {
+        float: left;
+        font-size: 16px;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .dropdown .dropbtn {
+        font-size: 16px;
+        border: 80%;
+        border-radius: 10%;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        font-family: inherit;
+        margin: 0;
+        width: 100%;
+      }
+
+      .navbar a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: red;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #231919;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        margin-top: 3.5%;
+      }
+
+      .dropdown-content a {
+        float: none;
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+      .dropdown-content option {
+        float: none;
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content option:hover {
+        background-color: black;
+      }
+      .dropdown-content a:hover {
+        background-color: black;
+      }
+      a:hover {
+        background-color: #ddd;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      option {
+        cursor: pointer;
+      }
+      .main {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        background-color: #484545;
+      }
+      input[type="text"] {
+        /* width: 100%; */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        color: #333;
+        transition: border-color 0.3s;
+        /* background-color: #333; */
+      }
+
+      input[type="text"]::placeholder,
+      select {
+        color: #999;
+      }
+      input[type="submit"] {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 100%;
+        background-color: #d9534f;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #c9302c;
+      }
+      .MMFrom input {
+        margin: 5% 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn">
+            SCHOASTIC
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <option class="scmm" value="MM" onclick="mm()">MM</option>
+            <option class="scgg" value="GG" onclick="gg()">GG</option>
+            <option class="scmg" value="MG" onclick="mg()">MG</option>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn">
+            DETERMINISTIC
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="mmd">MM</a>
+            <a href="ggd">GG</a>
+            <a href="mgd">MG</a>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn">
+            DATA
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="realdata">REAL TIME DATA</a>
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+    <div class="sco_mm">
+      <h1 style="text-align: center">This is MM</h1>
+      <div style="display: flex; justify-content: center">
+        <form
+          action="mm"
+          style="display: flex; flex-direction: column"
+          class="MMFrom"
+        >
+          <input type="text" name="lambd" placeholder="Lambda" />
+          <input type="text" name="mue" placeholder="Mue" />
+          <input type="text" name="c" placeholder="C" />
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+
+    <div class="sco_gg">
+      <h1 style="text-align: center">This is GG</h1>
+      <div style="display: flex; justify-content: center">
+        <form action="gg" class="MMFrom"   style="display: flex; flex-direction: column">
+          <select name="dista">
+            <option value="Uniform Distribution">Uniform Distribution</option>
+            <option value="Normal Distribution">Normal Distribution</option>
+            <option value="Gamma Distribution">Gamma Distribution</option>
+          </select>
+          <br />
+          <input type="text" name="minarr" placeholder=" Minarr" />
+          <br />
+          <input type="text" name="maxarr" placeholder=" Maxarr" />
+          <br />
+
+          <select name="dists">
+            <option value="Uniform Distribution">Uniform Distribution</option>
+            <option value="Normal Distribution">Normal Distribution</option>
+            <option value="Gamma Distribution">Gamma Distribution</option>
+          </select>
+          <br />
+          <input type="text" name="minser" placeholder="Minser" />
+          <br />
+          <input type="text" name="maxser" placeholder="Maxser" />
+          <br />
+          <input type="text" name="c" placeholder="C" />
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+
+    <div class="sco_mg">
+      <h1 style="text-align: center">This is MG</h1>
+      <div style="display: flex; justify-content: center">
+        <form action="mg" class="MMFrom" style="justify-content: center">
+          <select name="dist">
+            <option value="Uniform Distribution">Uniform Distribution</option>
+            <option value="Normal Distribution">Normal Distribution</option>
+            <option value="Gamma Distribution">Gamma Distribution</option>
+          </select>
+          <br />
+          <input type="text" name="c" placeholder="C" />
+          <br />
+          <input type="text" name="lambd" placeholder="Lambd" />
+          <br />
+          <input type="text" name="min" placeholder="Min" />
+          <br />
+          <input type="text" name="maxx" placeholder="Max" />
+          <br />
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  var scmm = $(".scmm").val();
+  console.warn(scmm);
+
+  var scgg = $(".scgg").val();
+  console.warn(scgg);
+
+  var scmg = $(".scmg").val();
+  console.warn(scmg);
+
+  $(".sco_gg").hide();
+  $(".sco_mg").hide();
+  $(".sco_mm").hide();
+
+  function mm() {
+    $(".sco_gg").hide();
+    $(".sco_mg").hide();
+    $(".sco_mm").show();
+  }
+
+  function gg() {
+    $(".sco_mm").hide();
+    $(".sco_mg").hide();
+    $(".sco_gg").show();
+  }
+
+  function mg() {
+    $(".sco_gg").hide();
+    $(".sco_mm").hide();
+    $(".sco_mg").show();
+  }
+
+  // function check(){
+  //   alert(result.html)
+  // }
+</script>

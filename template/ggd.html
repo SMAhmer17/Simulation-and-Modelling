@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>homepage</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      
+
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #070936;
+      }
+
+      .navbar {
+        overflow: hidden;
+        background-color: #0f2231;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        border:4px solid white
+      }
+
+      /* .navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+
+} */
+
+      .navbar a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: #d9534f;
+        color: white;
+      }
+
+      .dropdown {
+        float: left;
+        overflow: hidden;
+      }
+
+      .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 14px 16px;
+        background-color: inherit;
+        cursor: pointer;
+        font-family:'Times New Roman', Times, serif;
+
+        cursor: pointer;
+        transition: background-color 0.3s;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #267f4a;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: rgb(171, 66, 66);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #a82e2e;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* Center align form elements */
+      form {
+        text-align: left;
+        margin-top: 2px;
+        background-color: #060B59;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        
+        width: 70%;
+      }
+
+      form:hover {
+        box-shadow: 10px 10px 15px rgba(236, 229, 229, 0.2);
+      }
+
+      /* Style the select and input elements */
+      select,
+      input[type="text"] {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        /* width: 100%; */
+        /* font-size: 16px; */
+        transition: border-color 0.3s;
+        font-family: "Arial", sans-serif;
+        /* font-weight: bold; */
+        text-align: center;
+      }
+
+      select:focus,
+      input[type="text"]:focus {
+        border-color: #555;
+      }
+
+      /* Style placeholders */
+      ::placeholder {
+        color: #777;
+        font-weight: normal;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-align: left;
+      }
+
+      /* Style input on focus */
+      input[type="text"]:focus {
+        color: #333;
+        /* display:flex;
+  flex-direction: column; */
+      }
+
+      input[type="submit"] {
+        background-color: #65664b;
+        color: rgb(88, 62, 62);
+        border: none;
+        padding: 12px 25px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 100%;
+        background-color: #d9534f;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #c9302c;
+      }
+
+      /* Center align h1 elements */
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        color: #847e7e;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      /* Center align the main content */
+      .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dropbtn">
+          GG
+          <i class="fa fa-caret-down"></i>
+        </button>
+      </div>
+    </div>
+    <br />
+
+   
+    <div style="display: flex; justify-content: center">
+      <form action="ggdfunc">
+        <h1 style="text-align: center">ARRIVAL</h1>
+        <select name="disti" class="select">
+          <option >Select Distribution</option>
+          <option value="Uniform Distribution">Uniform Distribution</option>
+          <option value="Normal Distribution">Normal Distribution</option>
+          <option value="Gamma Distribution">Gamma Distribution</option>
+        </select>
+        <br />
+       <input type="text" name="mini" placeholder="min_mean_shape_arrival" />
+        <br />
+        <input type="text" name="maxxi" placeholder="max_var_scale_arrival"/>
+        <br />
+        <!-- lampda for exponential :<input type="text" name="b" >
+          <br> -->
+
+        <h1 style="text-align: center">SERVICE</h1>
+          <select name="dist" class="select">
+          <option >Select Distribution</option>
+          <option value="Uniform Distribution">Uniform Distribution</option>
+          <option value="Normal Distribution">Normal Distribution</option>
+          <option value="Gamma Distribution">Gamma Distribution</option>
+        </select>
+        <br />
+        <input type="text" name="min" placeholder="min_mean_shape_arrival"/>
+        <br />
+        <input type="text" name="maxx" placeholder="max_var_scale_arrival"/>
+        <br />
+        <input type="text" name="nos" placeholder="no of servers." />
+        <br />
+        <input type="submit" />
+      </form>
+    </div>
+  </body>
+</html>
